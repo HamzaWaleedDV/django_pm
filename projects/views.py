@@ -23,7 +23,6 @@ class ProjectUpdateView(UpdateView):
     model = models.Project
     form_class = forms.ProjectUpdateForm
     template_name = 'project/update.html'
-    success_url = reverse_lazy('project_list')
 
     def get_success_url(self):
         return reverse('project_update', args=[self.object.id])
