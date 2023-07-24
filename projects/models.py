@@ -50,4 +50,4 @@ class Task(models.Model):
         return self.description
 
     class Meta:
-        ordering = ('is_completed',)    
+        ordering = ('is_completed',)

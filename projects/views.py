@@ -2,13 +2,22 @@ from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, UpdateView, DeleteView, DetailView, CreateView
 from . import models, forms
+from django.core.paginator import Paginator
 
 # Create your views here.
 
 class ProjectListView(ListView):
     model = models.Project
     template_name = 'project/list.html'
-
+    paginate_by = 6
+    
+    def get_queryset(self):
+        query_set = super().get_queryset()
+        where = {}
+        q = self.request.GET.get('q', None)
+        if q: 
+            where['title__icontains'] = q
+        return query_set.filter(**where)
 
 
 class ProjectCreateView(CreateView):
