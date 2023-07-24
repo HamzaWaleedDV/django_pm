@@ -3,10 +3,11 @@ from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, UpdateView, DeleteView, DetailView, CreateView
 from . import models, forms
 from django.core.paginator import Paginator
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 
-class ProjectListView(ListView):
+class ProjectListView(LoginRequiredMixin, ListView):
     model = models.Project
     template_name = 'project/list.html'
     paginate_by = 6
@@ -20,7 +21,7 @@ class ProjectListView(ListView):
         return query_set.filter(**where)
 
 
-class ProjectCreateView(CreateView):
+class ProjectCreateView(LoginRequiredMixin, CreateView):
     model = models.Project
     form_class = forms.ProjectCreateForm
     template_name = 'project/create.html'
@@ -28,7 +29,7 @@ class ProjectCreateView(CreateView):
 
 
 
-class ProjectUpdateView(UpdateView):
+class ProjectUpdateView(LoginRequiredMixin, UpdateView):
     model = models.Project
     form_class = forms.ProjectUpdateForm
     template_name = 'project/update.html'
@@ -37,7 +38,7 @@ class ProjectUpdateView(UpdateView):
         return reverse('project_update', args=[self.object.id])
     
 
-class ProjectDeleteView(DeleteView):
+class ProjectDeleteView(LoginRequiredMixin, DeleteView):
     model = models.Project
     template_name = 'project/delete.html'
     success_url = reverse_lazy('project_list')
@@ -45,7 +46,7 @@ class ProjectDeleteView(DeleteView):
 
 
 
-class TaskCreateView(CreateView):
+class TaskCreateView(LoginRequiredMixin, CreateView):
     model = models.Task
     fields = ['project', 'description']  
     http_method_names = ['post']
@@ -54,7 +55,7 @@ class TaskCreateView(CreateView):
         return reverse('project_update', args=[self.object.project.id])  
     
 
-class TaskUpdateView(UpdateView):
+class TaskUpdateView(LoginRequiredMixin, UpdateView):
     model = models.Task
     fields = ['is_completed']  
     http_method_names = ['post']
@@ -63,7 +64,7 @@ class TaskUpdateView(UpdateView):
         return reverse('project_update', args=[self.object.project.id])  
 
 
-class TaskDeleteView(DeleteView):
+class TaskDeleteView(LoginRequiredMixin, DeleteView):
     model = models.Task
 
     def get_success_url(self):
