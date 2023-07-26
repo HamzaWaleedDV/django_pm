@@ -1,4 +1,3 @@
-from typing import Optional
 from django.forms.models import BaseModelForm
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -14,9 +13,12 @@ class ProjectListView(LoginRequiredMixin, ListView):
     model = models.Project
     template_name = 'project/list.html'
     paginate_by = 6
+    context_object_name = "projects"
     
     def get_queryset(self):
+        
         query_set = super().get_queryset()
+        print(query_set.count())
         where = {'user_id': self.request.user}
         q = self.request.GET.get('q', None)
         if q: 
