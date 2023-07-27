@@ -28,7 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'https://projectsmanagement.onrender.com',
-    'https://projectsmanagement.onrender.com/'
+    'https://projectsmanagement.onrender.com/',
+    'projectsmanagement.onrender.com'
 ]
 
 
