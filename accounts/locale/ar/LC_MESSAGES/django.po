@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-26 16:19+0300\n"
+"POT-Creation-Date: 2023-07-27 16:41+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,6 +55,14 @@ msgstr "حفظ"
 #: .\accounts\templates\registration\login.html:16
 msgid "Login"
 msgstr "تسجيل الدخول"
+
+#: .\accounts\templates\registration\login.html:20
+msgid "Don't have account?"
+msgstr "ليس لديك حساب؟"
+
+#: .\accounts\templates\registration\login.html:20
+msgid "Create account now"
+msgstr "أنشئ حساب الآن"
 
 #: .\accounts\templates\registration\register.html:8
 #: .\accounts\templates\registration\register.html:16

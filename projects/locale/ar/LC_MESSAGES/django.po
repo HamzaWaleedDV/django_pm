@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-26 17:53+0300\n"
+"POT-Creation-Date: 2023-07-27 16:41+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,8 +61,8 @@ msgstr "مهمة"
 msgid "(c) 2023 Hamza. All rights reserved."
 msgstr "جميع الحقوق محفوظة. حمزة 2023"
 
-#: .\projects\templates\partials\header.html:4 .\projects_managment\urls.py:23
-#: .\projects_managment\urls.py:24
+#: .\projects\templates\partials\header.html:4 .\projects_managment\urls.py:22
+#: .\projects_managment\urls.py:23
 msgid "Projects Managment"
 msgstr "إدارة المشاريع"
 
