@@ -29,7 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'https://projectsmanagement.onrender.com',
     'https://projectsmanagement.onrender.com/',
-    'projectsmanagement.onrender.com'
+    'projectsmanagement.onrender.com',
 ]
 
 
@@ -57,7 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    # "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'projects_managment.urls'
