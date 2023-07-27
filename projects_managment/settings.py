@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-5j$n#gshk_1=0or#k8pz!x&ffu_f2&d_^@nkg^+g1_ovn=89@c
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    ''
+    'https://projectsmanagement.onrender.com'
 ]
 
 
